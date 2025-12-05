@@ -18,23 +18,20 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Ruffle Configuration (Must be before loading Ruffle) -->
+    <!-- Ruffle Configuration -->
     <script>
         window.RufflePlayer = {
             config: {
-                // "splashScreen": true adds a 'Click to Play' button which fixes the AudioContext error
                 splashScreen: true,
-                // "autoplay": "on" attempts to start immediately if allowed, but splashScreen is the fallback
                 autoplay: "on", 
-                // "unmuteOverlay": "visible" ensures the user sees they need to click if audio is blocked
                 unmuteOverlay: "visible",
-                // "letterbox": "on" keeps the aspect ratio correct
                 letterbox: "on",
+                // "backgroundColor": "#000000" // Optional: ensures black background while loading
             }
         };
     </script>
 
-    <!-- Ruffle Flash Emulator (Essential for running the SWF) -->
+    <!-- Ruffle Flash Emulator -->
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 
     <!-- Google Fonts -->
@@ -58,13 +55,13 @@
             overflow: hidden;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
-        /* Ruffle Embed Styling */
-        embed, object {
+        /* Ensure the injected Ruffle player fills the container */
+        ruffle-player {
+            width: 100%;
+            height: 100%;
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
         }
         .faq-item details > summary {
             list-style: none;
@@ -195,16 +192,13 @@
                 <p class="mb-4 text-gray-600">Click the items in the office to discover the 24 ways to deal with your boss! (Warning: Contains Cartoon Violence)</p>
                 
                 <!-- Game Embed Wrapper -->
-                <div class="game-container ring-4 ring-gray-900">
-                    <!-- The SWF File Embed via Ruffle 
-                         Updated src to look for the file in the same folder.
-                         Ensure your file is named exactly "whack-your-boss.swf"
-                    -->
-                    <embed src="whack-your-boss.swf" type="application/x-shockwave-flash" width="100%" height="100%" wmode="opaque" allowScriptAccess="always">
+                <div id="ruffle-game-wrapper" class="game-container ring-4 ring-gray-900 bg-black flex items-center justify-center">
+                    <!-- Ruffle Player will be injected here by JS -->
+                    <p class="text-white text-sm">Initializing Ruffle Emulator...</p>
                 </div>
                 
                 <div class="mt-4 text-center text-sm text-gray-500">
-                    <p>Game not loading? It usually takes a few seconds for the emulator to initialize.</p>
+                    <p>Game not loading? Ensure <code>whack-your-boss.swf</code> is in the same folder as this file.</p>
                 </div>
             </div>
         </div>
@@ -367,5 +361,24 @@
         </div>
     </footer>
 
+    <!-- Ruffle Initialization Script -->
+    <script>
+        window.addEventListener("load", (event) => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById("ruffle-game-wrapper");
+            
+            // Clear loading text
+            container.innerHTML = "";
+            container.appendChild(player);
+            
+            // Explicitly load the SWF file
+            // Note: If you still see issues, ensure the server supports correct MIME types
+            player.load("whack-your-boss.swf").catch(e => {
+                console.error("Ruffle Load Error:", e);
+                container.innerHTML = "<div class='text-white p-4 text-center'>Error loading game file.<br>Please ensure 'whack-your-boss.swf' is in the same folder.</div>";
+            });
+        });
+    </script>
 </body>
 </html>
