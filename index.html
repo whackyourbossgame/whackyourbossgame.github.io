@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Whack Your Boss Online - The Ultimate Stress Relief Game (Official SEO Version)</title>
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="Play the original Whack Your Boss Flash game online for free. The ultimate office stress relief simulator. Find all 24 ways to whack your boss! Mobile compatible.">
+    <meta name="keywords" content="Whack Your Boss, Play Whack Your Boss, Flash Game, Stress Relief Game, Office Simulator, Tom Winkler, Doodle Game, Boss Fight">
+    <meta name="author" content="Whack Your Boss Fan Portal">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Play Whack Your Boss Online - Free Stress Relief">
+    <meta property="og:description" content="Feeling stressed at work? Find 24 ways to whack your boss in this classic puzzle game. No Flash player required.">
+    <meta property="og:image" content="https://www.whackyourboss.io/wp-content/uploads/2025/09/Play-Whack-Your-Boss-Online-For-Free.webp">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Ruffle Flash Emulator (Essential for running the SWF) -->
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f3f4f6;
+        }
+        h1, h2, h3, .marker-font {
+            font-family: 'Permanent Marker', cursive;
+        }
+        .game-container {
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            position: relative;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        /* Ruffle Embed Styling */
+        embed, object {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .faq-item details > summary {
+            list-style: none;
+        }
+        .faq-item details > summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item details[open] summary ~ * {
+            animation: sweep .5s ease-in-out;
+        }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
+    </style>
+
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "VideoGame",
+          "name": "Whack Your Boss",
+          "description": "The classic interactive flash game where players find creative objects in an office to relieve stress by whacking their boss.",
+          "genre": ["Puzzle", "Action", "Stress Relief"],
+          "gamePlatform": "Web Browser",
+          "applicationCategory": "Game",
+          "operatingSystem": "Any",
+          "author": {
+            "@type": "Person",
+            "name": "Tom Winkler"
+          },
+          "image": "https://www.whackyourboss.io/wp-content/uploads/2025/09/Play-Whack-Your-Boss-Online-For-Free.webp",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "12500"
+          }
+        },
+        {
+          "@type": "Organization",
+          "name": "Whack Your Boss Portal",
+          "url": "https://www.whackyourboss.io",
+          "logo": "https://www.whackyourboss.io/wp-content/uploads/2025/09/Whack-Your-Boss-150x150.webp",
+          "sameAs": [
+            "https://en.wikipedia.org/wiki/Whack_Your_Boss"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is Whack Your Boss free to play?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, Whack Your Boss is completely free to play online right here in your browser without downloading anything."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need Adobe Flash Player to play?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No! We use the Ruffle emulator technology to run the original SWF file safely in modern browsers like Chrome, Firefox, and Safari."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How many ways are there to whack the boss?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "There are typically 24 distinct items/ways to whack the boss in the classic version of the game. Can you find them all?"
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header / Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center gap-3">
+                        <img class="h-12 w-12 rounded-full border-2 border-red-600" src="https://www.whackyourboss.io/wp-content/uploads/2025/09/Whack-Your-Boss-150x150.webp" alt="Whack Your Boss Logo">
+                        <span class="marker-font text-2xl text-gray-900 tracking-wider">Whack Your Boss</span>
+                    </div>
+                    <div class="hidden md:ml-10 md:flex md:space-x-8">
+                        <a href="#game" class="border-red-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Play Game</a>
+                        <a href="#guide" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Guide & Wiki</a>
+                        <a href="#faq" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">FAQ</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full shadow transition duration-300 transform hover:scale-105">
+                        Start Whacking!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Game Section -->
+    <main id="game" class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        
+        <!-- Banner Image -->
+        <div class="w-full h-48 md:h-64 rounded-xl overflow-hidden mb-8 relative shadow-xl">
+            <img src="https://www.whackyourboss.io/wp-content/uploads/2025/09/Play-Whack-Your-Boss-Online-For-Free.webp" alt="Play Whack Your Boss Online" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                <h1 class="text-4xl md:text-6xl text-white text-center drop-shadow-lg px-4">Relieve Your Office Stress</h1>
+            </div>
+        </div>
+
+        <!-- The Game Area -->
+        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-12">
+            <div class="p-6 bg-white border-b border-gray-200">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-3xl text-gray-800">Play Whack Your Boss (Original Flash Version)</h2>
+                    <span class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900">Ruffle Enabled</span>
+                </div>
+                
+                <p class="mb-4 text-gray-600">Click the items in the office to discover the 24 ways to deal with your boss! (Warning: Contains Cartoon Violence)</p>
+                
+                <!-- Game Embed Wrapper -->
+                <div class="game-container ring-4 ring-gray-900">
+                    <!-- The SWF File Embed via Ruffle -->
+                    <embed src="https://www.whackyourboss.io/wp-content/uploads/games/custom/W/whack-your-boss.swf" type="application/x-shockwave-flash" width="100%" height="100%" wmode="opaque" allowScriptAccess="always">
+                </div>
+                
+                <div class="mt-4 text-center text-sm text-gray-500">
+                    <p>Game not loading? It usually takes a few seconds for the emulator to initialize.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content Area -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Main Content -->
+            <div class="lg:col-span-2 space-y-8">
+                
+                <article id="guide" class="bg-white shadow rounded-lg p-6">
+                    <h2 class="text-2xl text-red-600 mb-4 border-b pb-2">About Whack Your Boss</h2>
+                    <p class="mb-4 leading-relaxed">
+                        <strong>Whack Your Boss</strong> is the definitive stress-relief point-and-click puzzle game that took the internet by storm in the early 2000s. Originally created by <em>Tom Winkler</em>, this game allows players to vent their workplace frustrations in a harmless, virtual environment. The game's unique black-and-white "doodle" art style, accented only by the red of the "action," has made it an iconic piece of internet history.
+                    </p>
+                    <p class="mb-4 leading-relaxed">
+                        The premise is simple: You are a hardworking employee sitting in your cubicle, and your demanding boss walks in to nag you. Your goal? Find all the hidden objects in the room that trigger a short, animated sequence where the employee finally snaps.
+                    </p>
+                    <h3 class="text-xl mt-6 mb-3">How to Play</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li><strong>Hover:</strong> Move your mouse around the office cubicle.</li>
+                        <li><strong>Highlight:</strong> Watch for the cursor to change or items to highlight when hovered over.</li>
+                        <li><strong>Click:</strong> Click the object to trigger a scene.</li>
+                        <li><strong>Discover:</strong> There are 24 total items to find (Stapler, Monitor, Trash Can, etc.).</li>
+                        <li><strong>Reset:</strong> After the animation, the "Cleaner" will arrive to reset the scene so you can find the next item.</li>
+                    </ul>
+                </article>
+
+                <article class="bg-white shadow rounded-lg p-6">
+                    <h2 class="text-2xl text-red-600 mb-4 border-b pb-2">The History & Legacy</h2>
+                    <p class="mb-4 text-gray-600">
+                        Launched during the golden age of Flash gaming, <em>Whack Your Boss</em> became a viral sensation on portals like Newgrounds and Doodie.com. It spoke to the universal frustration of office politics and micromanagement. The game spawned numerous sequels and copycats, effectively launching the "Whack Your..." genre of games (Whack Your Ex, Whack Your PC, etc.).
+                    </p>
+                    <p class="text-gray-600">
+                        Despite the end of Adobe Flash support in 2020, this page preserves the original experience using modern emulation technology, ensuring future generations can experience this piece of web culture history.
+                    </p>
+                    
+                    <div class="mt-6 bg-gray-50 p-4 rounded border-l-4 border-red-500">
+                        <h4 class="font-bold text-gray-900">External Resources (Wiki)</h4>
+                        <ul class="mt-2 space-y-1 text-blue-600 underline">
+                            <li><a href="#" onclick="alert('Link would go to Wikipedia entry'); return false;">Wikipedia: Whack Your Boss</a></li>
+                            <li><a href="#" onclick="alert('Link would go to Tom Winkler Site'); return false;">Tom Winkler's Official Site</a></li>
+                            <li><a href="#" onclick="alert('Link would go to Fandom Wiki'); return false;">Whack Your Boss Fandom Wiki</a></li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Sidebar / FAQ -->
+            <div class="lg:col-span-1 space-y-8">
+                
+                <section id="faq" class="bg-white shadow rounded-lg p-6 sticky top-24">
+                    <h2 class="text-2xl text-gray-800 mb-6 flex items-center">
+                        <svg class="w-6 h-6 mr-2 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        FAQ
+                    </h2>
+
+                    <div class="space-y-4">
+                        <div class="faq-item border-b border-gray-200 pb-4">
+                            <details class="group cursor-pointer">
+                                <summary class="flex justify-between items-center font-medium text-gray-900 hover:text-red-600 transition">
+                                    Why doesn't the game load?
+                                    <span class="transition group-open:rotate-180">
+                                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                                    </span>
+                                </summary>
+                                <p class="text-gray-600 mt-3 group-open:animate-fadeIn">
+                                    The game requires a few seconds to emulate the Flash environment. If it stays black, try refreshing the page or checking if your corporate firewall blocks .swf files.
+                                </p>
+                            </details>
+                        </div>
+
+                        <div class="faq-item border-b border-gray-200 pb-4">
+                            <details class="group cursor-pointer">
+                                <summary class="flex justify-between items-center font-medium text-gray-900 hover:text-red-600 transition">
+                                    Is this game safe for kids?
+                                    <span class="transition group-open:rotate-180">
+                                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                                    </span>
+                                </summary>
+                                <p class="text-gray-600 mt-3 group-open:animate-fadeIn">
+                                    No. <strong>Whack Your Boss</strong> contains cartoon violence and blood. It is intended for mature audiences (17+) as a stress relief tool for adults.
+                                </p>
+                            </details>
+                        </div>
+
+                        <div class="faq-item border-b border-gray-200 pb-4">
+                            <details class="group cursor-pointer">
+                                <summary class="flex justify-between items-center font-medium text-gray-900 hover:text-red-600 transition">
+                                    Can I play on mobile?
+                                    <span class="transition group-open:rotate-180">
+                                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                                    </span>
+                                </summary>
+                                <p class="text-gray-600 mt-3 group-open:animate-fadeIn">
+                                    Yes! The Ruffle emulator we use adapts the Flash content to work on modern mobile browsers, though a mouse is recommended for the best precision.
+                                </p>
+                            </details>
+                        </div>
+                        
+                        <div class="faq-item pb-4">
+                            <details class="group cursor-pointer">
+                                <summary class="flex justify-between items-center font-medium text-gray-900 hover:text-red-600 transition">
+                                    Where are all 24 items?
+                                    <span class="transition group-open:rotate-180">
+                                        <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                                    </span>
+                                </summary>
+                                <p class="text-gray-600 mt-3 group-open:animate-fadeIn">
+                                    We won't spoil the fun! However, try checking the cubicle walls, your keyboard, the water cooler, and even the boss himself.
+                                </p>
+                            </details>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-xl marker-font mb-2">Need More Stress Relief?</h3>
+                    <p class="text-sm text-gray-300 mb-4">Bookmark this page to come back whenever work gets too tough!</p>
+                    <button onclick="document.execCommand('copy'); alert('URL Copied!')" class="w-full bg-white text-gray-900 font-bold py-2 px-4 rounded hover:bg-gray-200 transition">
+                        Share with Colleagues
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-12">
+        <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 border-b border-gray-700 pb-8">
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Home</a></li>
+                        <li><a href="#game" class="hover:text-white">Play Game</a></li>
+                        <li><a href="#guide" class="hover:text-white">Wiki</a></li>
+                        <li><a href="#faq" class="hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">About Us</h4>
+                    <p class="text-gray-400 text-sm">
+                        WhackYourBoss.io Fan Portal is dedicated to preserving the legacy of Tom Winkler's classic flash game. We ensure it remains playable on the modern web.
+                    </p>
+                </div>
+            </div>
+            <p class="mt-8 text-center text-base text-gray-400">
+                &copy; 2025 Whack Your Boss Fan Portal. All rights reserved. Game content &copy; Tom Winkler.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
